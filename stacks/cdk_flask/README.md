@@ -2,6 +2,12 @@
 
 Builds a Python 3.9, Flask 2.x docker container to deploy to AWS Lambda.
 
+## Build
+
+```
+./build.sh
+```
+
 ## Test
 
 This image uses the AWS Lambda Runtime Interface Emulator (aws-lambda-rie) to simulate running on Lambda locally.  Because of this, you can test this locally with curl.
@@ -25,7 +31,7 @@ Response:
     },
     "body": "<!doctype html>\n\n<head>\n    <title>Flask App</title>\n    <meta name=\"description\" content=\"A Flask App\">\n    <meta name=\"keywords\" content=\"cdk python web flask\">\n</head>\n<html>\n\n<body>\n    <p>CDK Python Web Apps - Flask</p>\n    <p><a href=\"api\">API</a></p>\n</body>\n\n</html>",
     "isBase64Encoded": false
-}`
+}
 ```
 
 You can also enter the container and start the app.
