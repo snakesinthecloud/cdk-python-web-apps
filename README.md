@@ -29,7 +29,7 @@ pip install -r requirements.txt
 
 ## Deploy
 
-    DOCKER_DEFAULT_PLATFORM=linux/amd64 cdk deploy --require-approval never --all
+    cdk deploy --require-approval never --all
 
 ## Destroy
 
