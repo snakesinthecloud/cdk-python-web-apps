@@ -34,7 +34,7 @@ pip install -r requirements.txt
 ## Destroy
 
 ```zsh
-yes | cdk destroy
+yes | cdk destroy --all
 ```
 
 Note: Instructions and configurations were built on MacOS 12.3.x with an M1 processor.  Docker commands and containers were built for platform: `linux/amd64`.
