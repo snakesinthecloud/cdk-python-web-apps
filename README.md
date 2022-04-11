@@ -1,9 +1,9 @@
 # cdk-python-web-apps
-Python based Web apps deployed to Lambda with AWS CDK and Docker.
+Python based Web apps, built with custom Docker containers, deployed to AWS with CDK.
 
 ## What is this for?
 
-This repository details ways to deploy Python Web frameworks (e.g. Flask) as standalone Lambdas with AWS CDK.  Connections to the applications are proxied through API Gateway.
+This repository details ways to deploy Python Web frameworks (e.g. Flask) as standalone functions with AWS CDK.  Connections to the applications are proxied through API Gateway.
 
 ## Getting started
 
@@ -24,8 +24,8 @@ pip install -r requirements.txt
 
 ## Manifest
 
- - [Flask 2.x built on public.ecr.aws/lambda/python:3.9](stacks/cdk_flask/)
- - [FastAPI built on public.ecr.aws/lambda/python:3.9](stacks/cdk_fastapi/)
+ - [Flask 2.x with Python 3.9 pushed to Lambda](stacks/cdk_flask/)
+ - [FastAPI with Python 3.9 pushed to Lambda](stacks/cdk_fastapi/)
 
 ## Deploy
 
