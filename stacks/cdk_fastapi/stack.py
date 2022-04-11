@@ -13,6 +13,11 @@ class InfrastructureTags:
     Product: str
 
 
+@dataclass
+class EnvironmentVariables:
+    STAGE: str
+
+
 class FastAPIStack(Stack):
     def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
@@ -31,6 +36,7 @@ class FastAPIStack(Stack):
             ),
             memory_size=128,
             timeout=Duration.seconds(29),
+            environment=asdict(EnvironmentVariables('prod')),
         )
 
         apigw.LambdaRestApi(
