@@ -25,6 +25,7 @@ pip install -r requirements.txt
 ## Manifest
 
  - [Flask 2.x built on public.ecr.aws/lambda/python:3.9](stacks/cdk_flask/)
+ - [FastAPI built on public.ecr.aws/lambda/python:3.9](stacks/cdk_fastapi/)
 
 ## Deploy
 
