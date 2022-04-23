@@ -26,6 +26,7 @@ pip install -r requirements.txt
 
  - [Flask 2.x with Python 3.9 pushed to Lambda](stacks/cdk_flask/)
  - [FastAPI with Python 3.9 pushed to Lambda](stacks/cdk_fastapi/)
+ - [Flask 2.x with Python 3.10 pushed to ECS Fargate](stacks/cdk_ecs_flask/)
 
 ## Deploy
 
