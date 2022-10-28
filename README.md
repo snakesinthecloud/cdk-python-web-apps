@@ -28,10 +28,18 @@ pip install -r requirements.txt
  - [FastAPI with Python 3.9 pushed to Lambda](stacks/cdk_fastapi/)
  - [Flask 2.x with Python 3.10 pushed to ECS Fargate](stacks/cdk_ecs_flask/)
  - [Flask 2.x with Python 3.11 pushed to Lambda](stacks/cdk_flask_311/)
+ - [FastAPI with Python 3.11 pushed to Lambda](stacks/cdk_fastapi/)
 
 ## Deploy
 
-    cdk deploy --require-approval never --all
+    cdk deploy --require-approval never --all --profile <your AWS profile>
+
+    # Individual app deployment
+    cdk deploy --require-approval never CdkPythonFlask --profile <your AWS profile>
+    cdk deploy --require-approval never CdkPythonFastAPI --profile <your AWS profile>
+    cdk deploy --require-approval never CdkEcsPythonFlask --profile <your AWS profile>
+    cdk deploy --require-approval never CdkPython311Flask --profile <your AWS profile>
+    cdk deploy --require-approval never CdkPython311FastAPI --profile <your AWS profile>
 
 ## Destroy
 
