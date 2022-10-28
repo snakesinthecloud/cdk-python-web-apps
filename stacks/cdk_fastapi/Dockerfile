@@ -1,7 +1,7 @@
 ARG FUNCTION_DIR="/home/lambda/"
 
 # Stage 1 - build
-FROM public.ecr.aws/lambda/python:3.9
+FROM --platform=linux/amd64 public.ecr.aws/lambda/python:3.9
 ARG FUNCTION_DIR
 WORKDIR ${FUNCTION_DIR}
 ADD https://github.com/aws/aws-lambda-runtime-interface-emulator/releases/latest/download/aws-lambda-rie /usr/bin/aws-lambda-rie
