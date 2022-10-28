@@ -1,0 +1,4 @@
+flask==2.2.2
+werkzeug==2.2.2
+serverless-wsgi==3.0.0
+markupsafe==2.1.1
