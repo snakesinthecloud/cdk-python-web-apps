@@ -1,18 +1,18 @@
 #!/usr/bin/env python3
 from aws_cdk import App
 
-from stacks.cdk_ecs_flask.stack import EcsFlaskStack
-from stacks.cdk_fastapi.stack import FastAPIStack
-from stacks.cdk_fastapi_311.stack import FastAPIStack311
-from stacks.cdk_flask.stack import FlaskStack
-from stacks.cdk_flask_311.stack import FlaskStack311
+from stacks.cdk_ecs_python_3_10_flask.stack import CdkEcsFargatePython310Flask
+from stacks.cdk_lambda_python_3_9_fastapi.stack import CdkLambdaPython39FastAPI
+from stacks.cdk_lambda_python_3_9_flask.stack import CdkLambdaPython39Flask
+from stacks.cdk_lambda_python_3_11_fastapi.stack import CdkLambdaPython311FastAPI
+from stacks.cdk_lambda_python_3_11_flask.stack import CdkLambdaPython311Flask
 
 app = App()
 
-FlaskStack(app, "CdkPythonFlask")
-FastAPIStack(app, "CdkPythonFastAPI")
-EcsFlaskStack(app, "CdkEcsPythonFlask")
-FlaskStack311(app, "CdkPython311Flask")
-FastAPIStack311(app, "CdkPython311FastAPI")
+CdkLambdaPython39Flask(app, "CdkLambdaPython39Flask")
+CdkLambdaPython39FastAPI(app, "CdkLambdaPython39FastAPI")
+CdkEcsFargatePython310Flask(app, "CdkEcsFargatePython310Flask")
+CdkLambdaPython311Flask(app, "CdkLambdaPython311Flask")
+CdkLambdaPython311FastAPI(app, "CdkLambdaPython311FastAPI")
 
 app.synth()

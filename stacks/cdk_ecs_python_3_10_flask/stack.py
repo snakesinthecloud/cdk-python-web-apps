@@ -15,9 +15,11 @@ class InfrastructureTags:
     Product: str
 
 
-class EcsFlaskStack(Stack):
+class CdkEcsFargatePython310Flask(Stack):
     def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
+
+        name = "cdk-ecs-fargate-python-3-10-flask"
 
         # Build the docker image
         image = ecr_assets.DockerImageAsset(
@@ -37,7 +39,8 @@ class EcsFlaskStack(Stack):
         load_balanced_fargate_service = (
             ecs_patterns.ApplicationLoadBalancedFargateService(
                 self,
-                "EcsFlaskService",
+                f"{construct_id}-ELB",
+                service_name=name,
                 cluster=cluster,
                 desired_count=1,
                 cpu=256,

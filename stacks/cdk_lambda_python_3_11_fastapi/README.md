@@ -1,6 +1,6 @@
-# cdk_fastapi
+# Lambda, Python 3.11, FastAPI
 
-Builds a Python 3.9, FastAPI docker container to deploy to AWS Lambda.
+Builds a Python 3.11, FastAPI docker container to deploy to AWS Lambda.
 
 ## Build
 

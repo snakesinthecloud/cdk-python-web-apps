@@ -13,22 +13,20 @@ class InfrastructureTags:
     Product: str
 
 
-@dataclass
-class EnvironmentVariables:
-    STAGE: str
-
-
-class FastAPIStack(Stack):
+class CdkLambdaPython39Flask(Stack):
     def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
 
+        name = "cdk-lambda-python-3-9-flask"
+        description = "CDK Lambda Python 3.9 Flask"
+
         handler = lambda_.Function(
             self,
-            "CdkPythonFastAPI-Handler",
-            description="CDK FastAPI",
-            runtime=lambda_.Runtime.FROM_IMAGE,
-            handler=lambda_.Handler.FROM_IMAGE,
-            function_name="cdk-fastapi",
+            f"{construct_id}-Handler",
+            description=description,
+            runtime=lambda_.Runtime.FROM_IMAGE,  # type: ignore
+            handler=lambda_.Handler.FROM_IMAGE,  # type: ignore
+            function_name=name,
             code=lambda_.Code.from_asset_image(
                 directory=os.path.join(os.path.dirname(__file__), "."),
                 file="Dockerfile",
@@ -36,18 +34,17 @@ class FastAPIStack(Stack):
             ),
             memory_size=128,
             timeout=Duration.seconds(29),
-            environment=asdict(EnvironmentVariables("prod")),
         )
 
         apigw.LambdaRestApi(
             self,
-            "CdkPythonFastAPI-API",
-            rest_api_name="cdk-fastapi",
-            description="This service proxies to a FastAPI-based Lambda.",
-            handler=handler.current_version,
+            f"{construct_id}-API",
+            rest_api_name=name,
+            description=description,
+            handler=handler.current_version,  # type: ignore
         )
 
         # Tag all resources the same
-        tags = InfrastructureTags(Environment="prod", Product="FastAPI")
+        tags = InfrastructureTags(Environment="dev", Product="flask")
         for k, v in asdict(tags).items():
             Tags.of(self).add(k, v)

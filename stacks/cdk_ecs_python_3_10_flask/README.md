@@ -1,4 +1,4 @@
-# cdk_ecs_flask
+# ECS, Python 3.10, Flask 2
 
 Builds a Python 3.10, Flask 2.x docker container to deploy to AWS ECS.
 

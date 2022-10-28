@@ -1,4 +1,4 @@
-# cdk_flask
+# Lambda, Python 3.9, Flask 2
 
 Builds a Python 3.9, Flask 2.x docker container to deploy to AWS Lambda.
 
