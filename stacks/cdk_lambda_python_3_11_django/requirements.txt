@@ -1,0 +1,4 @@
+django==4.1.2
+mangum==0.16.0
+awslambdaric==2.0.4
+pysqlite3-binary

@@ -30,6 +30,7 @@ pip install -r requirements.txt
 -   [ECS Fargate + Python 3.10 + Flask 2.x](stacks/cdk_ecs_python_3_10_flask/)
 -   [Lambda + Python 3.11 + Flask 2.x](stacks/cdk_lambda_python_3_11_flask/)
 -   [Lambda + Python 3.11 + FastAPI](stacks/cdk_lambda_python_3_11_fastapi/)
+-   [Lambda + Python 3.11 + Django 4.1](stacks/cdk_lambda_python_3_11_django/)
 
 ## Deploy
 
@@ -42,6 +43,7 @@ pip install -r requirements.txt
     cdk deploy --require-approval never CdkEcsFargatePython310Flask --profile <your AWS profile>
     cdk deploy --require-approval never CdkLambdaPython311Flask --profile <your AWS profile>
     cdk deploy --require-approval never CdkLambdaPython311FastAPI --profile <your AWS profile>
+    cdk deploy --require-approval never CdkLambdaPython311Django --profile <your AWS profile>
 
 ## Destroy
 
