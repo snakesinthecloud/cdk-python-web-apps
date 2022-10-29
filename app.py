@@ -2,6 +2,7 @@
 from aws_cdk import App
 
 from stacks.cdk_ecs_python_3_10_flask.stack import CdkEcsFargatePython310Flask
+from stacks.cdk_ecs_python_3_11_flet.stack import CdkEcsFargatePython311Flet
 from stacks.cdk_lambda_python_3_9_fastapi.stack import CdkLambdaPython39FastAPI
 from stacks.cdk_lambda_python_3_9_flask.stack import CdkLambdaPython39Flask
 from stacks.cdk_lambda_python_3_11_django.stack import CdkLambdaPython311Django
@@ -16,5 +17,6 @@ CdkEcsFargatePython310Flask(app, "CdkEcsFargatePython310Flask")
 CdkLambdaPython311Flask(app, "CdkLambdaPython311Flask")
 CdkLambdaPython311FastAPI(app, "CdkLambdaPython311FastAPI")
 CdkLambdaPython311Django(app, "CdkLambdaPython311Django")
+CdkEcsFargatePython311Flet(app, "CdkEcsFargatePython311Flet")
 
 app.synth()
