@@ -13,8 +13,6 @@ RUN apt-get update && \
     unzip \
     libcurl4-openssl-dev
 
-RUN python -m pip install --target . awslambdaric==2.0.4
-
 # Set up dependencies, expanded into /home/lambda
 COPY requirements.txt entry.sh ./
 RUN python -m pip install --upgrade pip && \

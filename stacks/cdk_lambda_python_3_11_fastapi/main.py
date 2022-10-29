@@ -3,7 +3,7 @@ import os
 import sys
 
 import uvicorn
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, __version__
 from fastapi.templating import Jinja2Templates
 from mangum import Mangum
 from pydantic import BaseSettings
@@ -34,7 +34,11 @@ templates = Jinja2Templates(directory="templates")
 @app.get("/")
 async def index(request: Request):
     return templates.TemplateResponse(
-        "index.html", {"request": request, "product": "FastAPI"}
+        "index.html",
+        {
+            "request": request,
+            "product": "FastAPI",
+        },
     )
 
 
@@ -42,7 +46,9 @@ async def index(request: Request):
 async def info():
     return {
         "app_name": settings.app_name,
-        "python_version": sys.version,
+        "platform": "Lambda",
+        "python": sys.version,
+        "web_server": f"FastAPI: {__version__}",
     }
 
 

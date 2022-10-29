@@ -4,9 +4,7 @@ Builds a Python 3.11, FastAPI docker container to deploy to AWS Lambda.
 
 ## Build
 
-```
-./build.sh
-```
+    ./build.sh
 
 ## Test
 
@@ -38,6 +36,6 @@ Response:
 You can also enter the container and start the app.
 
 ```zsh
-docker exec -it cdk_python_fastapi sh
+docker exec -it cdk_lambda_python_3_11_fastapi sh
 python main.py
 ```
