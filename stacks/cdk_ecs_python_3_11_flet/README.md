@@ -2,6 +2,8 @@
 
 Builds a Python 3.11, Flet app, deployed to AWS ECS.
 
+![Flet on ECS](images/flet_on_ecs.drawio.png)
+
 ## Build
 
     ./build.sh
