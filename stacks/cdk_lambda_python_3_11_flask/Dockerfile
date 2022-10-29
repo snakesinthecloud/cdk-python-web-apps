@@ -18,8 +18,6 @@ RUN apt-get update && \
     git clone https://github.com/logandk/serverless-wsgi --branch 3.0.1 "/home/lambda/serverless-wsgi" && \
     cp serverless-wsgi/wsgi_handler.py ./ && cp serverless-wsgi/serverless_wsgi.py ./
 
-RUN python -m pip install --target . awslambdaric==2.0.4
-
 # Set up dependencies, expanded into /home/lambda
 COPY requirements.txt entry.sh wsgi.py .serverless-wsgi ./
 RUN python -m pip install -r requirements.txt --target .
