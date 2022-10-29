@@ -1,4 +1,4 @@
-# Lambda, Python 3.11, Flet
+# ECS, ELB, Python 3.11, and a Flet app
 
 Builds a Python 3.11, Flet app, deployed to AWS ECS.
 
