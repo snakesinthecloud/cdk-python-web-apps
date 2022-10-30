@@ -44,6 +44,7 @@ pip install -r requirements.txt
     cdk deploy --require-approval never CdkLambdaPython311Flask --profile <your AWS profile>
     cdk deploy --require-approval never CdkLambdaPython311FastAPI --profile <your AWS profile>
     cdk deploy --require-approval never CdkLambdaPython311Django --profile <your AWS profile>
+    cdk deploy --require-approval never CdkEcsFargatePython311Flet --profile <your AWS profile>
 
 ## Destroy
 
