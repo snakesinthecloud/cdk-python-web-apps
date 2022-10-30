@@ -15,7 +15,7 @@ docker exec -it cdk_ecs_python_3_11_flet sh
 python main.py
 ```
 
-To view the app, you can browse to `http://127.0.0.1:8080/` on your host computer.
+To view the app, you can browse to `http://127.0.0.1` on your host computer (port 8080 works as well).
 
 ## With more time
 

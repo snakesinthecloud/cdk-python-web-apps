@@ -11,12 +11,16 @@ from stacks.cdk_lambda_python_3_11_flask.stack import CdkLambdaPython311Flask
 
 app = App()
 
+# Deploy all: cdk deploy --require-approval never --all --profile <aws profile>
+# Deploy single stack: cdk deploy --require-approval never <name> --profile <aws profile>
+
 CdkLambdaPython39Flask(app, "CdkLambdaPython39Flask")
 CdkLambdaPython39FastAPI(app, "CdkLambdaPython39FastAPI")
-CdkEcsFargatePython310Flask(app, "CdkEcsFargatePython310Flask")
 CdkLambdaPython311Flask(app, "CdkLambdaPython311Flask")
 CdkLambdaPython311FastAPI(app, "CdkLambdaPython311FastAPI")
 CdkLambdaPython311Django(app, "CdkLambdaPython311Django")
+
+CdkEcsFargatePython310Flask(app, "CdkEcsFargatePython310Flask")
 CdkEcsFargatePython311Flet(app, "CdkEcsFargatePython311Flet")
 
 app.synth()

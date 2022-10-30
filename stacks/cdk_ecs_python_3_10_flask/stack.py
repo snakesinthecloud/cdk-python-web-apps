@@ -31,7 +31,21 @@ class CdkEcsFargatePython310Flask(Stack):
         )
 
         # Set up networking
-        vpc = ec2.Vpc(self, "Vpc", max_azs=2, cidr="10.0.0.0/16")
+        # 2 public AZ/subnets like the following: x.x.1.0/24, x.x.2.0/24
+        subnet_config_public = ec2.SubnetConfiguration(
+            name=f"{name}-public",
+            subnet_type=ec2.SubnetType.PUBLIC,
+            cidr_mask=24,
+            reserved=False,
+        )
+        vpc = ec2.Vpc(
+            self,
+            "Vpc",
+            max_azs=2,
+            cidr="10.0.0.0/16",
+            nat_gateways=None,
+            subnet_configuration=[subnet_config_public],
+        )
         cluster = ecs.Cluster(self, "EcsCluster", vpc=vpc)
         ec2.SecurityGroup(self, "SG", vpc=vpc)
 
@@ -49,6 +63,7 @@ class CdkEcsFargatePython310Flask(Stack):
                     container_port=80,
                 ),
                 public_load_balancer=True,
+                assign_public_ip=True,
             )
         )
 
