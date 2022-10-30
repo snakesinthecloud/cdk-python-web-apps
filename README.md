@@ -31,6 +31,7 @@ pip install -r requirements.txt
 -   [Lambda + Python 3.11 + Flask 2.x](stacks/cdk_lambda_python_3_11_flask/)
 -   [Lambda + Python 3.11 + FastAPI](stacks/cdk_lambda_python_3_11_fastapi/)
 -   [Lambda + Python 3.11 + Django 4.1](stacks/cdk_lambda_python_3_11_django/)
+-   [ECS Fargate + Python 3.11 + Flet](stacks/cdk_ecs_python_3_11_flet/)
 
 ## Deploy
 
