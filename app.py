@@ -2,6 +2,7 @@
 from aws_cdk import App
 
 from stacks.cdk_ecs_python_3_10_flask.stack import CdkEcsFargatePython310Flask
+from stacks.cdk_ecs_python_3_11_django.stack import CdkEcsFargatePython311Django
 from stacks.cdk_ecs_python_3_11_flet.stack import CdkEcsFargatePython311Flet
 from stacks.cdk_lambda_python_3_9_fastapi.stack import CdkLambdaPython39FastAPI
 from stacks.cdk_lambda_python_3_9_flask.stack import CdkLambdaPython39Flask
@@ -22,5 +23,10 @@ CdkLambdaPython311Django(app, "CdkLambdaPython311Django")
 
 CdkEcsFargatePython310Flask(app, "CdkEcsFargatePython310Flask")
 CdkEcsFargatePython311Flet(app, "CdkEcsFargatePython311Flet")
+CdkEcsFargatePython311Django(
+    scope=app,
+    construct_id="CdkEcsFargatePython311Django",
+    description="A Django-based ECS service, with initial access through an Application Load Balancer.",
+)
 
 app.synth()
