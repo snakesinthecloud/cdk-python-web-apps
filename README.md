@@ -32,6 +32,17 @@ pip install -r requirements.txt
 -   [Lambda + Python 3.11 + FastAPI](stacks/cdk_lambda_python_3_11_fastapi/)
 -   [Lambda + Python 3.11 + Django 4.1](stacks/cdk_lambda_python_3_11_django/)
 -   [ECS Fargate + Python 3.11 + Flet](stacks/cdk_ecs_python_3_11_flet/)
+-   [ECS Fargate + Python 3.11 + Django](stacks/cdk_ecs_python_3_11_django/)
+
+## Cost
+
+These are by no means a "production-level" deployment.  I don't expect deployed resources to be kept around for longer than a day.
+
+I don't recommend deploying these all together, but doing so will allow you to compare all the different deployment models.
+
+The largest cost with a deployment will be the ALB (part of ECS deployment) and the ECS cluster itself.  Deploying to Lambda you won't see any cost unless it's in use.
+
+Keep this in mind based on your budget, and make sure to destroy resources when they aren't in use.  
 
 ## Deploy
 
@@ -46,6 +57,7 @@ pip install -r requirements.txt
     cdk deploy --require-approval never CdkLambdaPython311FastAPI --profile <your AWS profile>
     cdk deploy --require-approval never CdkLambdaPython311Django --profile <your AWS profile>
     cdk deploy --require-approval never CdkEcsFargatePython311Flet --profile <your AWS profile>
+    cdk deploy --require-approval never CdkEcsFargatePython311Django --profile <your AWS profile>
 
 ## Destroy
 
