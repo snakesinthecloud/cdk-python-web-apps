@@ -1,6 +1,6 @@
 # cdk_django
 
-Builds a Python 3.9, Django docker container to deploy to AWS Lambda.
+Builds a Python 3.11, Django docker container to deploy to AWS Lambda.
 
 ## Build
 
